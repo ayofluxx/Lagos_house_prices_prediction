@@ -37,10 +37,6 @@ def user_features():
     features = pd.DataFrame(data, index=[0])
     return features
 
-CHUNKSIZE = 10000  # Number of rows to read at a time
-for chunk in pd.read_csv('cleandf.csv', chunksize=CHUNKSIZE):
-    lagos_df = chunk
-
 lagos_df = pd.read_csv('/Users/4yoboy/PycharmProjects/Streamlit/cleandf.csv')
 X = lagos_df.drop(['price'], axis = 1)
 y = lagos_df['price']
